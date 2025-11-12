@@ -1,0 +1,14 @@
+{
+  "bank": "HDFC Bank",
+  "bankName": "HDFC",
+  "issuer": "HDFC Bank",
+  "network": "MasterCard",
+  "networkLogo": "/img/mastercard.png",
+  "badge": "283",
+  "number": "5105105105105100",
+  "expiry": "12/26",
+  "status": "ACTIVE",
+  "availableLimit": 69580,
+  "totalLimit": 90000,
+  "holder": "ABHAY DHEK"
+}

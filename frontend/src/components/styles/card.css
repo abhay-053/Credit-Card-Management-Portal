@@ -1,0 +1,362 @@
+.credit-card {
+  position: relative;
+  border-radius: 14px;
+  padding: 22px 26px;
+  color: #f3eaea;
+  width: 430px;
+  min-height: 200px;
+  background: linear-gradient(135deg, #6a1292 0%, #0d3b72 55%, #b71c2e 100%);
+  background-blend-mode: multiply;
+  box-shadow: 0 18px 36px rgba(30, 175, 219, 0.28);
+  overflow: visible;
+  z-index: 20;
+  transform: translateY(-8px);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.credit-card::before {
+  content: '';
+  position: absolute;
+  left: -40%;
+  top: -10%;
+  width: 70%;
+  height: 140%;
+  /* background: radial-gradient(ellipse at left center, rgba(0,0,0,0.45) 0%, transparent 60%); */
+  pointer-events:none;
+}
+
+.bank-brand {
+  position: absolute;
+  left: 50%;
+  top: 12px;
+  transform: translateX(-50%);
+  display:flex;
+  align-items: baseline;
+  gap: 6px;
+  z-index: 40;
+}
+
+.bank-logo {
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  color: #ffffff;
+  background: linear-gradient(90deg,#ffffff 0%, rgba(255,255,255,0.85) 40%);
+  color: #022a5a;
+  padding: 2px 8px;
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+}
+
+.bank-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,0.86);
+  margin-top: 2px;
+}
+
+.card-menu {
+  position: absolute;
+  right: 18px;
+  top: 16px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 20px;
+  line-height: 1;
+  color: rgba(255,255,255,0.95);
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.status-badge {
+  position: absolute;
+  left: 16px;
+  top: 10px;     
+  background: rgba(0,0,0,0.44);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 12px;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 50;    
+}
+
+.card-menu {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  z-index: 60;
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.95);
+  font-size: 20px;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.menu-btn:hover { background: rgba(255,255,255,0.04); }
+
+.menu-pop {
+  position: absolute;
+  right: 0;
+  top: 44px;
+  min-width: 180px;
+  display: block;
+  z-index: 80;
+}
+
+.menu-panel {
+  background: rgba(255,255,255,0.98);
+  color: #022a5a;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.25);
+  overflow: hidden;
+  padding: 6px 0;
+  border: 1px solid rgba(2,6,23,0.06);
+}
+
+.menu-item {
+  display:block;
+  width:100%;
+  text-align:left;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: rgba(2,6,23,0.06);
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px;
+  margin-top: 12px;
+}
+
+.cardholder-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: rgba(255,255,255,0.98);
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 58%; 
+}
+
+.card-meta {
+  margin: 0;
+  display:flex;
+  align-items:flex-end;
+  gap: 8px;
+}
+
+.card-meta .label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.78);
+  margin-bottom: 4px;
+}
+.card-meta .value {
+  font-size: 14px;
+  font-weight: 800;
+}
+
+@media (max-width: 420px) {
+  .meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .cardholder-name { max-width: 100%; }
+  .card-meta { align-self: flex-end; }
+  .menu-pop { right: -8px; }
+}
+
+.network-type {
+  font-weight: 800;
+  font-size: 18px;
+  color: #878488;
+}
+
+
+.eye {
+  position: absolute;
+  right: 76px;
+  top: 60px;
+  background: rgba(255,255,255,0.04);
+  width: 30px;
+  height: 26px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.12s ease, transform .12s;
+}
+.eye:hover { transform: translateY(-2px); }
+.eye svg { width:18px; height:18px; stroke: currentColor; }
+
+.number-row {
+  margin-top: 40px;   
+  margin-left: 18px;
+  margin-right: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.number-row .mask {
+  font-size: 22px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  font-family: ui-monospace, "Roboto Mono", Menlo, monospace;
+  line-height: 1;
+  display:block;
+}
+
+.card-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 12px -26px 0;
+}
+
+.card-limits {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding: 0 8px 4px 18px;
+}
+
+.card-limits .cardholder-name {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: rgba(255,255,255,0.98);
+  letter-spacing: 0.2px;
+}
+
+.card-limits .label.small {
+  font-size:11px;
+  color: rgba(255,255,255,0.78);
+  margin-bottom:6px;
+}
+
+.card-limits .amt {
+  font-weight:900;
+  font-size:17px;
+}
+
+.card-limits .amt.success {
+  color: #b7f5c9;
+}
+
+.credit-card.blocked {
+  opacity: 0.8;
+  filter: grayscale(0.15);
+}
+
+@media (max-width: 520px) {
+  .credit-card { width: 320px; padding: 18px; min-height: 200px; }
+  .number-row .mask { font-size: 18px; letter-spacing: 3px; }
+  .emv { left: 18px; top: 82px; }
+  .network-wrap { right: 14px; top: 48px; }
+  .eye { right: 78px; top: 12px; }
+  .bank-logo { font-size: 16px; }
+}
+
+
+
+.toggle-checkbox {
+  appearance: none;
+  width: 40px;
+  height: 24px;
+  background: linear-gradient(135deg, #6a1292 0%, #0d3b72 55%, #b71c2e 100%);
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.12s;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.95);
+}
+
+.toggle-checkbox:hover {
+  transform: translateY(-2px);
+}
+
+.toggle-checkbox:checked {
+  background: linear-gradient(135deg, #2463ea 0%, #0d3b72 55%, #6a1292 100%);
+}
+
+.toggle-checkbox::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.toggle-checkbox:checked::before {
+  transform: translateX(16px);
+}
+
+.cvv-eye {
+  background: rgba(255,255,255,0.04);
+  width: 30px;
+  height: 26px;
+  align-items:center;
+  justify-content:center;
+  display:flex;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.12s ease, transform .12s;
+}
+.cvv-eye:hover { transform: translateY(-2px); }
+.cvv-eye svg { width:18px; height:18px; stroke: currentColor; }
+
+@media (max-width: 520px) {
+  .toggle-checkbox {
+    width: 36px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+  }
+
+  .toggle-checkbox::before {
+    width: 16px;
+    height: 16px;
+    top: 2px;
+    left: 2px;
+  }
+
+  .toggle-checkbox:checked::before {
+    transform: translateX(14px);
+  }
+}

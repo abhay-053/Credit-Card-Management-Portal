@@ -1,0 +1,54 @@
+{
+  "user": { "name": "Abhay Dhek" },
+  "activeCards": 2,
+  "totalCards": 2,
+  "totalLimit": 90000,
+  "availableCredit": 69580,
+  "outstanding": 20420,
+  "cards": [
+    {
+      "id": "card_1",
+      "status": "ACTIVE",
+      "network": "VISA",
+      "logo": "", 
+      "number": "1234 5678 9012 3456",
+      "expiry": "12/26",
+      "availableLimit": 44580,
+      "totalLimit": 60000
+    },
+    {
+      "id": "card_2",
+      "status": "BLOCKED",
+      "network": "MC",
+      "logo": "",
+      "number": "5678 1234 5678 9012",
+      "expiry": "06/27",
+      "availableLimit": 25000,
+      "totalLimit": 30000
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx1",
+      "merchant": "Flipkart",
+      "category": "Shopping",
+      "date": "2025-09-15T05:30:00Z",
+      "amount": -2850
+    },
+    {
+      "id": "tx2",
+      "merchant": "Zomato",
+      "category": "Food",
+      "date": "2025-09-20T05:30:00Z",
+      "amount": -720,
+      "mode": "BNPL"
+    },
+    {
+      "id": "tx3",
+      "merchant": "BookMyShow",
+      "category": "Entertainment",
+      "date": "2025-09-18T05:30:00Z",
+      "amount": -450
+    }
+  ]
+}
