@@ -126,7 +126,7 @@ export const getDashboard = async (): Promise<DashboardResponse> => {
   const candidatePaths = ["/api/dashboard"];
 
   try {
-    const raw = await tryGetFromCandidates<any>(candidatePaths);
+    const raw = await tryGetFromCandidates<any>(candidatePaths);//api.get('/api/dashboard')
     const normalized = normalizeDashboardPayload(raw);
     normalized.cards = Array.isArray(normalized.cards) ? normalized.cards : [];
     normalized.transactions = Array.isArray(normalized.transactions) ? normalized.transactions : [];
@@ -143,44 +143,6 @@ export const getDashboard = async (): Promise<DashboardResponse> => {
     return normalized;
   } catch (err) {
     console.error("getDashboard failed after trying multiple endpoints:", err);
-    throw err;
-  }
-};
-
-/** Fetch details for a single card (CardDetail). */
-export const getCardById = async (cardId: string | number): Promise<any> => {
-  try {
-    const res = await api.get(`/cards/${cardId}`);
-    return res.data;
-  } catch (err) {
-    console.error("getCardById failed", err);
-    throw err;
-  }
-};
-
-/** Update credit limit for a card. */
-export const updateCardLimit = async (
-  cardId: string | number,
-  newCreditLimit: number
-): Promise<any> => {
-  try {
-    const res = await api.put(`/cards/${cardId}/limit`, { newCreditLimit });
-    return res.data;
-  } catch (err) {
-    console.error("updateCardLimit failed", err);
-    throw err;
-  }
-};
-
-/** Fetch full PAN for a card (owner-only). */
-export const getCardPan = async (cardId: string | number): Promise<string | null> => {
-  try {
-    const res = await api.get(`/cards/${cardId}/pan`);
-    if (typeof res.data === "string") return res.data;
-    if (res.data && (res.data.cardNumber || res.data.pan)) return res.data.cardNumber || res.data.pan;
-    return null;
-  } catch (err) {
-    console.error("getCardPan failed", err);
     throw err;
   }
 };

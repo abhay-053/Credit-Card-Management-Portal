@@ -177,40 +177,19 @@ export default {
     })
 
     function normalizeTx(tx = {}) {
-      const merchantName =
-        tx.merchantName ||
-        tx.merchant?.name ||
-        tx.merchant ||
-        tx.name ||
-        tx.label ||
-        (typeof tx.merchant === 'object' ? (tx.merchant.name || '') : '') ||
-        ''
-
-      const date = tx.transactionDate || tx.date || tx.timestamp || tx.createdAt || null
-
-      const isBnpl =
-        !!tx.isBnpl ||
-        String(tx.type || tx.transactionType || tx.mode || tx.paymentType || '').toLowerCase() === 'bnpl' ||
-        String(tx.category || '').toLowerCase() === 'bnpl'
-
-      const processorName =
-        tx.processorName ||
-        (tx.processor && (tx.processor.name || tx.processorName)) ||
-        tx.mode ||
-        null
-
       return {
         id: tx.id,
         cardId: tx.cardId,
-        merchantName: merchantName || 'Unknown',
-        amount: tx.amount ?? tx.value ?? 0,
-        date,
-        category: tx.category || tx.subCategory || null,
-        isBnpl,
-        processorName,
-        raw: tx 
+        merchantName: tx.merchantName || 'Unknown',
+        amount: tx.amount ?? 0,
+        date: tx.transactionDate || null,
+        category: tx.category || null,
+        isBnpl: !!tx.isBnpl,
+        processorName: null, 
+        raw: tx
       }
     }
+
 
     const recentTransactionsList = computed(() => {
       return (transactions.value || []).slice(0, 6)

@@ -13,11 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/cards")
 public class CardLimitController {
     @Autowired
-    private final CardLimitService cardLimitService;
-
-    public CardLimitController(CardLimitService cardLimitService){
-        this.cardLimitService = cardLimitService;
-    }
+    CardLimitService cardLimitService;
 
     @PutMapping("/{cardId}/limit")
     public ResponseEntity<CardLimitResponse> updateLimit(
